@@ -58,7 +58,7 @@ The backend provides endpoints for managing employee records and leave requests.
 
 #### A. Get All Employees (`GET /employees`)
 
-```http
+```
 GET /employees
 
 Response (200 OK):
@@ -77,9 +77,9 @@ JSON
 ],
 "message": "Success"
 }
-
-B. Add New Employee (POST /employees)
-
+```
+#### B. Add New Employee (POST /employees)
+```
 This requires a JSON body containing the employee details, including an ID (UUID string), name (string), department (string), and leave balance (integer).
 HTTP
 
@@ -100,9 +100,9 @@ JSON
 "statusCode": 201,
 "message": "Success"
 }
-
-C. Delete Employee (DELETE /employees/:id)
-
+```
+#### C. Delete Employee (DELETE /employees/:id)
+```
 Replace :id with the actual employee ID (UUID) you wish to remove.
 HTTP
 
@@ -115,16 +115,17 @@ JSON
 "statusCode": 200,
 "message": "Success"
 }
+```
+### 2. Leave Endpoints (/leaves)
 
-2. Leave Endpoints (/leaves)
+| Method | Path	| Description |
+| :--- | :--- | :--- |
+| **GET** | `/leaves` |	Retrieve all pending, approved, or failed leave requests. |
+| **POST** | `/leaves` | Submit a new leave request (status must be **PENDING**). |
+| **PATCH** | `/leaves/:id/approve` | Approve a specific leave request by ID (**UUID**). |
 
-Method	Path	Description
-GET	/leaves	Retrieve all pending, approved, or failed leave requests.
-POST	/leaves	Submit a new leave request (status must be PENDING).
-PATCH	/leaves/:id/approve	Approve a specific leave request by ID (UUID).
-
-A. Submit New Leave Request (POST /leaves)
-
+#### A. Submit New Leave Request (POST /leaves)
+```
 This endpoint requires a JSON body. Note that the id and employeeId are UUID strings, and the status must be PENDING on creation.
 HTTP
 
@@ -147,9 +148,9 @@ JSON
 "statusCode": 201,
 "message": "Success"
 }
-
-B. Approve Leave Request (PATCH /leaves/:id/approve)
-
+```
+#### B. Approve Leave Request (PATCH /leaves/:id/approve)
+```
 This action handles the logic for approval, including checking the employee's available leave balance and updating the status to APPROVED or FAIL. Replace :id with the leave request UUID.
 HTTP
 
@@ -163,8 +164,6 @@ JSON
 "message": "Success"
 }
 
-    (If the employee is not found, or the leave balance is insufficient, a 400 Bad Request or 404 Not Found may be returned by the server logic.)
+(If the employee is not found, or the leave balance is insufficient, a 400 Bad Request or 404 Not Found may be returned by the server logic.)
 
-
----
-Let me know if you would like me to format any specific section of this document
+```
