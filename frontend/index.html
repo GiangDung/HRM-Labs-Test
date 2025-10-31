@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRM Frontend</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>HRM System</h1>
+
+  <div class="section">
+    <h2>Add New Employee</h2>
+    <form id="employeeForm">
+      <label>Name</label>
+      <input type="text" id="empName" required />
+
+      <label>Department</label>
+      <input type="text" id="empDept" required />
+
+      <label>Leave Balance</label>
+      <input type="number" id="empLeave" required />
+
+      <button type="submit">Add Employee</button>
+    </form>
+    <div id="employeeFormError" class="error-container" style="display:none;"></div>
+    
+    <button id="viewEmployees">View All Employees</button>
+    <table id="employeeTable" style="margin-top:10px; display:none;">
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Department</th><th>Leave Balance</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Create Leave Request</h2>
+    <form id="leaveForm">
+      <label>Employee ID</label>
+      <input type="text" id="leaveEmpId" required />
+
+      <label>Start Date</label>
+      <input type="date" id="leaveStart" required />
+
+      <label>End Date</label>
+      <input type="date" id="leaveEnd" required />
+
+      <label>Reason</label>
+      <textarea id="leaveReason" required></textarea>
+
+      <button type="submit">Submit Leave Request</button>
+    </form>
+    <div id="leaveFormError" class="error-container" style="display:none;"></div>
+
+    <button id="viewLeaves">View All Leave Requests</button>
+    <table id="leaveTable" style="margin-top:10px; display:none;">
+      <thead>
+        <tr>
+          <th>ID</th><th>Employee ID</th><th>Start</th><th>End</th><th>Reason</th><th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
