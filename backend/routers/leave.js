@@ -114,7 +114,6 @@ leaveRouter.patch('/:id/approve', (req, res) => {
 
     const leaveServicer = new leaveService(leavesData, employeesData);
     const success = leaveServicer.approveLeave(id);
-    console.log(success);
 
     if (!success) {
       return res.status(400).json({
@@ -128,7 +127,6 @@ leaveRouter.patch('/:id/approve', (req, res) => {
       message: 'Success',
     });
   } catch (error) {
-    console.error(error);
     return res.status(500).json({
       statusCode: 500,
       error: 'Internal Server Error',
