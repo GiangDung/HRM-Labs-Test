@@ -49,16 +49,16 @@ The backend provides endpoints for managing employee records and leave requests.
 
 | Method | Path | Description |
 | :--- | :--- | :--- |
-| **GET** | `/employees` | Retrieve all employee records. |
-| **GET** | `/employees/:id` | Retrieve a specific employee by ID (**UUID**). |
-| **POST** | `/employees` | Add a new employee record. |
-| **DELETE** | `/employees/:id` | Delete an employee record by ID (**UUID**). |
+| **GET** | `/api/employees` | Retrieve all employee records. |
+| **GET** | `/api/employees/:id` | Retrieve a specific employee by ID (**UUID**). |
+| **POST** | `/api/employees` | Add a new employee record. |
+| **DELETE** | `/api/employees/:id` | Delete an employee record by ID (**UUID**). |
 
 ---
 ### 2. Leave Endpoints (/leaves)
 
 | Method | Path	| Description |
 | :--- | :--- | :--- |
-| **GET** | `/leaves` |	Retrieve all pending, approved, or failed leave requests. |
-| **POST** | `/leaves` | Submit a new leave request (status must be **PENDING**). |
-| **PATCH** | `/leaves/:id/approve` | Approve a specific leave request by ID (**UUID**). |
+| **GET** | `/api/leaves` |	Retrieve all pending, approved, or failed leave requests. |
+| **POST** | `/api/leaves` | Submit a new leave request (status must be **PENDING**). |
+| **PATCH** | `/api/leaves/:id/approve` | Approve a specific leave request by ID (**UUID**). |
